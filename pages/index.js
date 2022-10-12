@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Image from "next/image";
 import utilStyles from "../styles/utils.module.css";
 
 const name = "Matheus de Oliveira de Andrade";
@@ -13,11 +12,11 @@ export default function Home() {
       </Head>
 
       <main>
-        <Image
+        <img
           src="/images/profile.jpg"
-          height={144}
-          width={144}
-          alt={name}
+          height="144"
+          width="144"
+          alt="linkedin"
           className={utilStyles.borderCircle}
         />
 
@@ -30,23 +29,18 @@ export default function Home() {
             href="https://github.com/matheus-oliveira-andrade"
             className="card"
           >
-            <Image
-              src="/images/github.png"
-              height={70}
-              width={70}
-              alt="github"
-            />
+            <img src="/images/github.png" height="50" width="60" alt="github" />
           </a>
 
           <a
             href="https://www.linkedin.com/in/matheus-oliveira-479467162/"
             className="card"
           >
-            <Image
+            <img
               src="/images/linkedin.png"
-              height={50}
-              width={50}
-              alt="github"
+              height="50"
+              width="60"
+              alt="linkedin"
             />
           </a>
         </div>
