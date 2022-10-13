@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Image from "next/image";
 import styles from "./layout-posts.module.css";
 import utilStyles from "../styles/utils.module.css";
 import Link from "next/link";
@@ -20,13 +19,12 @@ export default function LayoutPosts({ children }) {
       <header className={styles.header}>
         <Link href="/">
           <a>
-            <Image
-              priority
+            <img              
               src="/images/profile.jpg"
               className={utilStyles.borderCircle}
-              height={108}
-              width={108}
-              alt=""
+              height="108"
+              width="108"
+              alt="profile image"
             />
           </a>
         </Link>
