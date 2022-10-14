@@ -2,13 +2,28 @@ import Head from "next/head";
 import utilStyles from "../styles/utils.module.css";
 
 const name = "Matheus de Oliveira de Andrade";
+const title = "Perfil - " + name;
+const description = "Blog com o objetivo de disseminar o conhecimento e experiências, focado em backend, AWS e muitos outros assuntos";
 
 export default function Home() {
   return (
     <div className="container">
       <Head>
-        <title>Profile</title>
+        <title>{title}</title>
+        
         <link rel="icon" href="/favicon.ico" />
+
+        <meta name="theme-color" content="#2e4772" />
+        <meta name="description" content={description}></meta>
+
+        <meta property="og:title" content="Perfil"></meta>
+        <meta property="og:type" content="article"></meta>
+        <meta property="og:site_name" content={name}></meta>
+        <meta property="og:description" content={description}></meta>
+
+        <meta name="twitter:card" content="summary"></meta>
+        <meta name="twitter:title" content={title}></meta>
+        <meta name="twitter:description" content={description}></meta>        
       </Head>
 
       <main>
@@ -71,7 +86,7 @@ export default function Home() {
 
         footer {
           width: 100%;
-          height: 100px;
+          height: 60px;
           border-top: 1px solid #f6f6f6;
           display: flex;
           justify-content: center;
@@ -110,6 +125,7 @@ export default function Home() {
           margin-bottom: 0;
           line-height: 1.5;
           font-size: 1.9rem;
+          color: #2e4772;
         }
 
         .title,
@@ -120,6 +136,7 @@ export default function Home() {
         .description {
           line-height: 0;
           font-size: 1.2rem;
+          color: #273d64;
         }
 
         code {
