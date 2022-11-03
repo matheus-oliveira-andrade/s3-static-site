@@ -17,6 +17,6 @@ jobs:
         with:
           node-version: 16.x           
       - run: pwd
-      - run: npm ci
+      - run: npm install
       - run: npm run build
  
