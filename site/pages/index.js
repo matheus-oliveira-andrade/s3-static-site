@@ -66,7 +66,7 @@ export default function Home() {
           </a>
 
           <a
-            href="https://www.linkedin.com/in/matheus-oliveira-479467162/"
+            href="https://www.linkedin.com/in/matheus-oliveira-andrade"
             className="card"
           >
             <img
