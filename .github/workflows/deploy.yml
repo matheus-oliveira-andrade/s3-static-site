@@ -43,5 +43,5 @@ jobs:
       shell: bash
 
     - name: Copy new files
-      run: aws s3 sync .\out\ ${{ secrets.BUCKET_NAME }}
+      run: aws s3 sync ./out/ ${{ secrets.BUCKET_NAME }}
       shell: bash
