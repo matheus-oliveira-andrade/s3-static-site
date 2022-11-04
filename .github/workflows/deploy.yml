@@ -1,0 +1,42 @@
+name: Deploy pipeline
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:    
+    runs-on: ubuntu-latest    
+    defaults:
+      run:
+        working-directory: ./site
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    
+    - name: Setup node
+      uses: actions/setup-node@v3        
+      with:
+        node-version: 16                
+    
+    - name: Build & export
+      run: |
+       npm install
+       npm run export
+
+    - name: Configure AWS Credentials  
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.ACCESS_KEY_ID }}
+        aws-region: us-east-1
+
+    - name: Remove old files
+      run: |
+        aws s3 rm --recursive ${{ secrets.BUCKET_NAME }}
+
+    - name: Copy new files
+      run: |
+        aws s3 sync .\out\ ${{ secrets.BUCKET_NAME }}
