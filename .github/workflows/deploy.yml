@@ -35,8 +35,8 @@ jobs:
 
     - name: Remove old files
       run: |
-        aws s3 rm --recursive s3://matheus-oliveira-andrade.com
+        aws s3 rm --recursive ${{ secrets.BUCKET_NAME }}
 
     - name: Copy new files
       run: |
-        aws s3 sync .\out\ s3://matheus-oliveira-andrade.com
+        aws s3 sync .\out\ ${{ secrets.BUCKET_NAME }}
