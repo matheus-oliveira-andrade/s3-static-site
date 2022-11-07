@@ -2,15 +2,16 @@ import Head from "next/head";
 import utilStyles from "../styles/utils.module.css";
 
 const name = "Matheus de Oliveira de Andrade";
-const title = "Perfil - " + name;
-const description = "Blog com o objetivo de disseminar o conhecimento e experiências, focado em backend, AWS e muitos outros assuntos";
+const title = `${name} - Profile`;
+const description =
+  "Blog com o objetivo de disseminar o conhecimento e experiências, focado em backend, AWS e muitos outros assuntos";
 
 export default function Home() {
   return (
     <div className="container">
       <Head>
         <title>{title}</title>
-        
+
         <link rel="icon" href="/favicon.ico" />
 
         <meta name="theme-color" content="#2e4772" />
@@ -23,16 +24,16 @@ export default function Home() {
 
         <meta name="twitter:card" content="summary"></meta>
         <meta name="twitter:title" content={title}></meta>
-        <meta name="twitter:description" content={description}></meta>        
+        <meta name="twitter:description" content={description}></meta>
 
         {/* Global Site Tag (gtag.js) - Google Analytics */}
         <script
-            async
-            src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
-          />
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
@@ -40,16 +41,16 @@ export default function Home() {
               page_path: window.location.pathname,
             });
           `,
-            }}
-          />
+          }}
+        />
       </Head>
 
       <main>
         <img
-          src="/images/profile.jpg"
+          src="https://avatars.githubusercontent.com/u/32457879?v=4"
           height="144"
           width="144"
-          alt="linkedin"
+          alt="Profile image"
           className={utilStyles.borderCircle}
         />
 
@@ -80,7 +81,7 @@ export default function Home() {
       </main>
 
       <footer>
-        <p>Copyright © | {name}</p>
+        <p>© Copyright | {name}</p>
       </footer>
 
       <style jsx>{`
@@ -216,11 +217,6 @@ export default function Home() {
         }
 
         @media (max-width: 600px) {
-          // .grid {
-          //   width: 100%;
-          //   flex-direction: column;
-          // }
-
           .title {
             font-size: 1.6rem;
           }
