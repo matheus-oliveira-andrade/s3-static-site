@@ -1,10 +1,2 @@
-# Blog and links three
-
-## How run 
-Inside folder site
-
-        npm install
-
-<br>
-
-        npm run dev
+# Blog
+A static site created using Next.js framework, terraform for manage infrastructure using AWS as cloud provider
