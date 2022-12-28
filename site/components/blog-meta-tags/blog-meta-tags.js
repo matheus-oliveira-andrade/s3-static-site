@@ -14,10 +14,13 @@ const keywords = [
   "Developer"
 ]
 
-export default function ({ title, pageName }) {
+export default function ({ title }) {
+  var pageFullName = `${baseName} | ${title}`;
+
   return (
+    
     <Head>
-      <title>{`${baseName} | ${title}`}</title>
+      <title>{pageFullName}</title>
 
       <link rel="icon" href="/favicon.ico" />
 
@@ -27,9 +30,9 @@ export default function ({ title, pageName }) {
       <meta name="theme-color" content="#2e4772"></meta>
       <meta name="description" content={description}></meta>
 
-      <meta property="og:title" content={title}></meta>
+      <meta property="og:title" content={pageFullName}></meta>
       <meta property="og:type" content="article"></meta>
-      <meta property="og:site_name" content={`${baseName} | ${pageName}`}></meta>
+      <meta property="og:site_name" content={`${baseName} | ${title}`}></meta>
       <meta property="og:description" content={description}></meta>
 
       <meta name="twitter:image" content="https://avatars.githubusercontent.com/u/32457879?v=4"/>

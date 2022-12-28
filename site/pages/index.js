@@ -6,10 +6,7 @@ import ProfileTopCard from "../components/profile-top-card/profile-top-card";
 export default function Home() {
   return (
     <div className="container">
-      <BlogMetaTags 
-        pageName="profile"
-        title="Profile"
-      />
+      <BlogMetaTags title="Profile" />
 
       <main>
         <ProfileTopCard />
@@ -36,7 +33,7 @@ export default function Home() {
           flex-direction: column;
           justify-content: center;
           align-items: center;
-        }   
+        }
       `}</style>
     </div>
   );
