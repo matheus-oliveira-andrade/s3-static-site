@@ -1,5 +1,5 @@
 import Link from "next/link";
-import LayoutPosts from "../../components/layout-posts";
+import LayoutPosts from "../../components/layout-posts/layout-posts";
 
 export default function FirstPost() {
   return (

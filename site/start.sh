@@ -2,4 +2,4 @@
 
 docker build -t blog:latest .
 
-docker run -p 8080:80
+docker run -p 8080:80 blog
