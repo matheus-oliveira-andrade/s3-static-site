@@ -3,6 +3,8 @@ import CopyrightFooter from "../components/copyright-footer/copyright-footer";
 import ProfileLinks from "../components/profile-links/profile-links";
 import ProfileTopCard from "../components/profile-top-card/profile-top-card";
 
+import Link from 'next/link'
+
 export default function Home() {
   return (
     <div className="container">
@@ -15,6 +17,8 @@ export default function Home() {
       </main>
 
       <CopyrightFooter />
+
+      {/* <Link href="/blog">See my blog</Link> */}
 
       <style jsx>{`
         .container {
