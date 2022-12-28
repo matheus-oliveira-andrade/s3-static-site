@@ -45,9 +45,7 @@ export default function Home() {
         </div>
       </main>
 
-      <footer>
-        <p>© Copyright | Matheus de Oliveira de Andrade</p>
-      </footer>
+      <CopyrightFooter />
 
       <style jsx>{`
         .container {
@@ -67,27 +65,7 @@ export default function Home() {
           justify-content: center;
           align-items: center;
         }
-
-        footer {
-          width: 100%;
-          height: 60px;
-          border-top: 1px solid #f6f6f6;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-
-        footer img {
-          margin-left: 0.5rem;
-        }
         
-        footer p {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          font-size: 0.8rem;
-        }
-
         a {
           color: inherit;
           text-decoration: none;
