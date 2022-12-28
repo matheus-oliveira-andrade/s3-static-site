@@ -1,12 +1,13 @@
 import Head from "next/head";
-import styles from "./layout-posts.module.css";
-import utilStyles from "../styles/utils.module.css";
 import Link from "next/link";
+
+import styles from "./layout-posts.module.css";
+import utilStyles from "../../styles/utils.module.css";
 
 const name = "Matheus de Oliveira de Andrade";
 export const siteTitle = "Profile";
 
-export default function LayoutPosts({ children }) {
+export default function ({ children }) {
   return (
     <div className={styles.container}>
       <Head>
@@ -19,7 +20,7 @@ export default function LayoutPosts({ children }) {
       <header className={styles.header}>
         <Link href="/">
           <a>
-            <img              
+            <img
               src="/images/profile.jpg"
               className={utilStyles.borderCircle}
               height="108"
