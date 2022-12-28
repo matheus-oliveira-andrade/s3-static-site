@@ -1,49 +1,14 @@
-import Head from "next/head";
+import BlogMetaTags from "../components/blog-meta-tags/blog-meta-tags";
+import CopyrightFooter from "../components/copyright-footer/copyright-footer";
 import utilStyles from "../styles/utils.module.css";
-
-const name = "Matheus de Oliveira de Andrade";
-const title = `${name} - Profile`;
-const description =
-  "Blog com o objetivo de disseminar o conhecimento e experiências, focado em backend, AWS e muitos outros assuntos";
 
 export default function Home() {
   return (
     <div className="container">
-      <Head>
-        <title>{title}</title>
-
-        <link rel="icon" href="/favicon.ico" />
-
-        <meta name="theme-color" content="#2e4772" />
-        <meta name="description" content={description}></meta>
-
-        <meta property="og:title" content="Perfil"></meta>
-        <meta property="og:type" content="article"></meta>
-        <meta property="og:site_name" content={name}></meta>
-        <meta property="og:description" content={description}></meta>
-
-        <meta name="twitter:card" content="summary"></meta>
-        <meta name="twitter:title" content={title}></meta>
-        <meta name="twitter:description" content={description}></meta>
-
-        {/* Global Site Tag (gtag.js) - Google Analytics */}
-        <script
-          async
-          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
-        />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
-              page_path: window.location.pathname,
-            });
-          `,
-          }}
-        />
-      </Head>
+      <BlogMetaTags 
+        pageName="profile"
+        title="Profile"
+      />
 
       <main>
         <img
@@ -54,7 +19,7 @@ export default function Home() {
           className={utilStyles.borderCircle}
         />
 
-        <h1 className="title">{name}</h1>
+        <h1 className="title">Matheus de Oliveira de Andrade</h1>
 
         <p className="description">Backend Software Developer</p>
 
@@ -81,7 +46,7 @@ export default function Home() {
       </main>
 
       <footer>
-        <p>© Copyright | {name}</p>
+        <p>© Copyright | Matheus de Oliveira de Andrade</p>
       </footer>
 
       <style jsx>{`
@@ -115,7 +80,7 @@ export default function Home() {
         footer img {
           margin-left: 0.5rem;
         }
-
+        
         footer p {
           display: flex;
           justify-content: center;
