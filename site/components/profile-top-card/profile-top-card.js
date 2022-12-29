@@ -1,5 +1,7 @@
 import styles from './profile-top-card.module.css'
 
+import Link from 'next/link'
+
 export default function ProfileTopCard() {
   return (
     <>
@@ -11,7 +13,7 @@ export default function ProfileTopCard() {
         className={styles.borderCircle}
       />
 
-      <h1 className={styles.title}>Matheus de Oliveira de Andrade</h1>
+      <Link href="/blog"><h1 className={styles.title}>Matheus de Oliveira de Andrade</h1></Link>
 
       <p className={styles.description}>Backend Software Developer</p>
     </>
