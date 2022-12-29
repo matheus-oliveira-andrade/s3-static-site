@@ -25,7 +25,7 @@ export default function ({ children }) {
       >
         <h2 className={utilStyles.headingLg}> 
           <Link href="/">
-            <a style={{ color: "#2e4772", fontSize: "1.3rem" }}>{name}</a>
+            <a style={{ color: "#2e4772", fontSize: "1.6rem", textDecoration: "none" }}>{name}</a>
           </Link>
         </h2>
 
@@ -39,8 +39,9 @@ export default function ({ children }) {
           </a>
         </div>  
       </header>
-
+      
       <main>{children}</main>
+      
       <CopyrightFooter />
     </div>
   );
