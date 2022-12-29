@@ -77,11 +77,12 @@ function PostList() {
 
   return (
     <>
-      {posts.map((post) => (
+      {posts.map((post, idx) => (
         <PostLi
           postedAt={post.postedAt}
           title={post.title}
           shortDescription={post.shortDescription}
+          key={idx}
         />
       ))}
     </>
