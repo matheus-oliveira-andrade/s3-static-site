@@ -93,15 +93,47 @@ export default function () {
     <BlogLayout>
       <BlogMetaTags title="Blog"/>
 
+      <div className="breadcrumb">
+        <Link href="/">
+          <span> Home </span>
+        </Link>
+
+        <span> / </span>
+
+        <span className="breadcrumb-active"> Blog </span>
+      </div>
+
       <h1
         style={{
           color: "#2e4772",
           fontSize: "1.6rem",
           fontWeight: "700",
+          margin: ".2rem 0"
         }}
       >
         Blog
       </h1>
+
+      <style jsx>{`
+        .breadcrumb {
+          display: "flex";
+          flex-direction: "row";
+          align-items: "start";
+          maxwidth: "40%";
+        }
+
+        .breadcrumb > span {
+          font-size: .8rem;
+          font-weight: 500;
+          color: #2e4772;
+          margin-right: 5px;
+        }
+
+        .breadcrumb > .breadcrumb-active {
+          color: #48485c;
+          font-weight: 400;
+        }
+      `}</style>
 
       <PostList />
     </BlogLayout>

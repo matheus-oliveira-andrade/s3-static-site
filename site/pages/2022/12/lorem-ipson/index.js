@@ -9,6 +9,19 @@ export default function FirstPost() {
     <BlogLayout>
       <BlogMetaTags title="Lorem Ipsum" />
 
+      <div className="breadcrumb">
+        <Link href="/">
+          <span> Home </span>
+        </Link>
+        <span> / </span>
+
+        <Link href="/blog">
+        <span> Blog </span>
+        </Link>
+        <span> / </span>
+        <span className="breadcrumb-active"> Lorem ipsum dolor sit amet </span>
+      </div>
+
       <h1 className="article-title">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
         dignissim lacinia enim
@@ -116,9 +129,8 @@ export default function FirstPost() {
 
       <style jsx>{`
         .article-title {
-          font-size: 1.rem;
           color: #272731;
-          // border-bottom: 1px solid #48485c;
+          margin-top: 0;
           margin-bottom: 0.5rem;
         }
 
@@ -126,6 +138,25 @@ export default function FirstPost() {
           font-size: 1.2rem;
           color: #131e31;
           margin: 0;
+        }
+
+        .breadcrumb {
+          display: "flex";
+          flex-direction: "row";
+          align-items: "start";
+          maxwidth: "40%";
+        }
+
+        .breadcrumb > span {
+          font-size: .8rem;
+          font-weight: 500;
+          color: #2e4772;
+          margin-right: 5px;
+        }
+
+        .breadcrumb > .breadcrumb-active {
+          color: #48485c;
+          font-weight: 400;
         }
 
         p {
