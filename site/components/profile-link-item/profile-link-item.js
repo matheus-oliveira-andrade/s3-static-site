@@ -1,6 +1,6 @@
 import styles from './profile-link-item.module.css'
 
-export default function ({ link, imgPath, altName }) {
+export default function ProfileLinkItem({ link, imgPath, altName }) {
   return (
     <>
       <a href={link} className={styles.card}>

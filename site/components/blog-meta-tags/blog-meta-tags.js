@@ -14,7 +14,7 @@ const keywords = [
   "Developer"
 ]
 
-export default function ({ title }) {
+export default function BlogMetaTags({ title }) {
   var pageFullName = `${baseName} | ${title}`;
 
   return (

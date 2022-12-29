@@ -1,6 +1,6 @@
 import styles from './profile-top-card.module.css'
 
-export default function () {
+export default function ProfileTopCard() {
   return (
     <>
       <img

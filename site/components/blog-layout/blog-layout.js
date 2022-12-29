@@ -9,7 +9,7 @@ import CopyrightFooter from "../copyright-footer/copyright-footer";
 const name = "Matheus Andrade";
 export const siteTitle = "Profile";
 
-export default function ({ children }) {
+export default function BlogLayout({ children }) {
   return (
     <div className={styles.container}>
       <Head>

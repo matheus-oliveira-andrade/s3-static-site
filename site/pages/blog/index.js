@@ -77,18 +77,19 @@ function PostList() {
 
   return (
     <>
-      {posts.map((post) => (
+      {posts.map((post, idx) => (
         <PostLi
           postedAt={post.postedAt}
           title={post.title}
           shortDescription={post.shortDescription}
+          key={idx}
         />
       ))}
     </>
   );
 }
 
-export default function () {
+export default function Blog() {
   return (
     <BlogLayout>
       <BlogMetaTags title="Blog"/>
