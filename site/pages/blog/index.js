@@ -1,104 +1,109 @@
 import Link from "next/link";
 import BlogLayout from "../../components/blog-layout/blog-layout";
+import BlogMetaTags from '../../components/blog-meta-tags/blog-meta-tags'
 
-import utilStyles from "../../styles/utils.module.css";
-
-export default function FirstPost() {
+function PostLi({ postedAt, title, shortDescription }) {
   return (
-    <BlogLayout>
-      {/* <Link href="/" className="backToHome">Back to home</Link> */}
-
-      {/* posted by */}
-      <div
-        style={{ display: "flex", flexDirection: "row", alignItems: "center" }}
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "start",
+        margin: "1.5rem 0",
+      }}
+    >
+      <span
+        style={{
+          fontSize: "0.7rem",
+          fontWeight: "bold",
+          color: "#1e2f4d",
+          marginBottom: "-7px",
+          width: "100%",
+        }}
       >
-        <Link href="/">
-          <a style={{ paddingRight: "10px" }}>
-            <img
-              src="/images/profile.jpg"
-              className={utilStyles.borderCircle}
-              height="50"
-              width="50"
-              alt="profile image"
-            />
-          </a>
-        </Link>
+        {postedAt}
+      </span>
 
-        <div
+      <Link href="/2022/12/lorem-ipson">
+        <span
           style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "start",
+            color: "#25395c",
+            fontSize: "1.4rem",
+            fontWeight: "680",
           }}
         >
-          <span style={{ fontSize: ".7rem", color: "#23375a" }}>
-            Dezembro 28, 2022
-          </span>
-          <Link href="/">
-            <span style={{ fontSize: ".7rem", color: "#23375a" }}>
-              Matheus Andrade
-            </span>
-          </Link>
-        </div>
-      </div>
+          {title}
+        </span>
+      </Link>
 
-      <h1>Lorem Ipsum</h1>
-      <hr />
+      <span style={{ color: "#2e4772", fontSize: "1.1rem", fontWeight: "450" }}>
+        {shortDescription}
+      </span>
+    </div>
+  );
+}
 
-      <article>
-        <h3>What is Lorem Ipsum?</h3>
+function PostList() {
+  const posts = [
+    {
+      postedAt: "Dezembro 24, 2022",
+      title:
+        'Section 1.10.32 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC',
+      shortDescription:
+        "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo...",
+    },
+    {
+      postedAt: "Novembro 15, 2022",
+      title:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra enim sapien",
+      shortDescription:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus consequat vulputate elit, et pharetra sem aliquet eu. Etiam a lobortis lorem. Sed condimentum enim urna, nec feugiat metus lobortis a. Aliquam molestie eu lorem sed vestibulum...",
+    },
+    {
+      postedAt: "Outubro 7, 2022",
+      title:
+        "There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain",
+      shortDescription:
+        "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident...",
+    },
+    {
+      postedAt: "Outubro 1, 2022",
+      title:
+        "Mauris eu tempus massa. Vestibulum placerat congue leo vitae sollicitudin. Duis porttitor mauris in elit elementum commodo",
+      shortDescription:
+        "neque congue, posuere felis vel, vestibulum magna. Pellentesque fringilla quis urna lobortis pulvinar. Mauris augue orci, volutpat vulputate congue at, ullamcorper a quam nisi nulla a orci. Mauris vestibulum...",
+    },
+  ];
 
-        <p>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book. It has survived not only
-          five centuries, but also the leap into electronic typesetting,
-          remaining essentially unchanged. It was popularised in the 1960s with
-          the release of Letraset sheets containing Lorem Ipsum passages, and
-          more recently with desktop publishing software like Aldus PageMaker
-          including versions of Lorem Ipsum.
-        </p>
+  return (
+    <>
+      {posts.map((post) => (
+        <PostLi
+          postedAt={post.postedAt}
+          title={post.title}
+          shortDescription={post.shortDescription}
+        />
+      ))}
+    </>
+  );
+}
 
-        <br />
+export default function () {
+  return (
+    <BlogLayout>
+      <BlogMetaTags title="Blog"/>
 
-        <h3>Why do we use it?</h3>
+      <h1
+        style={{
+          color: "#2e4772",
+          fontSize: "1.6rem",
+          fontWeight: "700",
+        }}
+      >
+        Blog
+      </h1>
 
-        <p>
-          It is a long established fact that a reader will be distracted by the
-          readable content of a page when looking at its layout. The point of
-          using Lorem Ipsum is that it has a more-or-less normal distribution of
-          letters, as opposed to using 'Content here, content here', making it
-          look like readable English. Many desktop publishing packages and web
-          page editors now use Lorem Ipsum as their default model text, and a
-          search for 'lorem ipsum' will uncover many web sites still in their
-          infancy. Various versions have evolved over the years, sometimes by
-          accident, sometimes on purpose (injected humour and the like).
-        </p>
-
-        <br />
-
-        <h3>Where does it come from?</h3>
-
-        <p>
-          Contrary to popular belief, Lorem Ipsum is not simply random text. It
-          has roots in a piece of classical Latin literature from 45 BC, making
-          it over 2000 years old. Richard McClintock, a Latin professor at
-          Hampden-Sydney College in Virginia, looked up one of the more obscure
-          Latin words, consectetur, from a Lorem Ipsum passage, and going
-          through the cites of the word in classical literature, discovered the
-          undoubtable source. Lorem Ipsum comes from sections 1.10.32 and
-          1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and
-          Evil) by Cicero, written in 45 BC. This book is a treatise on the
-          theory of ethics, very popular during the Renaissance. The first line
-          of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in
-          section 1.10.32. The standard chunk of Lorem Ipsum used since the
-          1500s is reproduced below for those interested. Sections 1.10.32 and
-          1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also
-          reproduced in their exact original form, accompanied by English
-          versions from the 1914 translation by H. Rackham.
-        </p>
-      </article>
+      <PostList />
     </BlogLayout>
   );
 }
