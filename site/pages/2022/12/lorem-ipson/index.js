@@ -9,8 +9,18 @@ export default function FirstPost() {
     <BlogLayout>
       <BlogMetaTags title="Lorem Ipsum" />
 
+      <h1 className="article-title">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+        dignissim lacinia enim
+      </h1>
+
       <div
-        style={{ display: "flex", flexDirection: "row", alignItems: "center" }}
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          alignItems: "center",
+          marginBottom: "1.5rem",
+        }}
       >
         <Link href="/">
           <a style={{ paddingRight: "10px" }}>
@@ -41,19 +51,16 @@ export default function FirstPost() {
             Dezembro 28, 2022
           </span>
           <span style={{ fontSize: ".7rem", color: "#23375a" }}>
-            <Link href="/" >
+            <Link href="/">
               <span style={{ color: "#37568d" }}>Matheus Andrade</span>
             </Link>{" "}
-            | 7 min leitura
+            | 3 min leitura
           </span>
         </div>
       </div>
 
-      <h1>Lorem Ipsum</h1>
-      <hr />
-
       <article>
-        <h3>What is Lorem Ipsum?</h3>
+        <h3 className="article-topic">What is Lorem Ipsum?</h3>
 
         <p>
           Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -69,7 +76,7 @@ export default function FirstPost() {
 
         <br />
 
-        <h3>Why do we use it?</h3>
+        <h3 className="article-topic">Why do we use it?</h3>
 
         <p>
           It is a long established fact that a reader will be distracted by the
@@ -85,7 +92,7 @@ export default function FirstPost() {
 
         <br />
 
-        <h3>Where does it come from?</h3>
+        <h3 className="article-topic">Where does it come from?</h3>
 
         <p>
           Contrary to popular belief, Lorem Ipsum is not simply random text. It
@@ -106,6 +113,27 @@ export default function FirstPost() {
           versions from the 1914 translation by H. Rackham.
         </p>
       </article>
+
+      <style jsx>{`
+        .article-title {
+          font-size: 1.rem;
+          color: #272731;
+          // border-bottom: 1px solid #48485c;
+          margin-bottom: 0.5rem;
+        }
+
+        .article-topic {
+          font-size: 1.2rem;
+          color: #131e31;
+          margin: 0;
+        }
+
+        p {
+          font-size: 1rem;
+          font-weight: 480;
+          color: #48485c;
+        }
+      `}</style>
     </BlogLayout>
   );
 }
