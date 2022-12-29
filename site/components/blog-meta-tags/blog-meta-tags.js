@@ -4,7 +4,7 @@ const GOOGLE_ANALYTICS_KEY = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS;
 
 const description = "Blog com o objetivo de disseminar o conhecimento e experiências, focado em backend, AWS e muitos outros assuntos";
 
-const baseName = "Matheus de Oliveira de Andrade";
+const baseName = "Matheus Andrade";
 
 const keywords = [
   "Programming",

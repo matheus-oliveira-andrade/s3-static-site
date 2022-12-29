@@ -1,14 +1,14 @@
 import Link from "next/link";
 import BlogLayout from "../../../../components/blog-layout/blog-layout";
+import BlogMetaTags from "../../../../components/blog-meta-tags/blog-meta-tags";
 
 import utilStyles from "../../../../styles/utils.module.css";
 
 export default function FirstPost() {
   return (
     <BlogLayout>
-      {/* <Link href="/" className="backToHome">Back to home</Link> */}
+      <BlogMetaTags title="Lorem Ipsum" />
 
-      {/* posted by */}
       <div
         style={{ display: "flex", flexDirection: "row", alignItems: "center" }}
       >
@@ -31,14 +31,21 @@ export default function FirstPost() {
             alignItems: "start",
           }}
         >
-          <span style={{ fontSize: ".7rem", color: "#23375a" }}>
+          <span
+            style={{
+              fontSize: "0.7rem",
+              fontWeight: "700",
+              color: "#1e2f4d",
+            }}
+          >
             Dezembro 28, 2022
           </span>
-          <Link href="/">
-            <span style={{ fontSize: ".7rem", color: "#23375a" }}>
-              Matheus Andrade
-            </span>
-          </Link>
+          <span style={{ fontSize: ".7rem", color: "#23375a" }}>
+            <Link href="/" >
+              <span style={{ color: "#37568d" }}>Matheus Andrade</span>
+            </Link>{" "}
+            | 7 min leitura
+          </span>
         </div>
       </div>
 
