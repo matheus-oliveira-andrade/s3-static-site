@@ -2,7 +2,7 @@ import ProfileLinkItem from "../profile-link-item/profile-link-item"
 
 import styles from './profile-links.module.css'
 
-export default function () {
+export default function ProfileLinks() {
   return (
     <>
       <div className={styles.grid}>

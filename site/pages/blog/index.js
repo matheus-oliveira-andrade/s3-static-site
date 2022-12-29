@@ -88,7 +88,7 @@ function PostList() {
   );
 }
 
-export default function () {
+export default function Blog() {
   return (
     <BlogLayout>
       <BlogMetaTags title="Blog"/>
