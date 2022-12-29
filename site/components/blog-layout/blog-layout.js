@@ -41,6 +41,7 @@ export default function ({ children }) {
       </header>
       
       <main>{children}</main>
+      
       <CopyrightFooter />
     </div>
   );
