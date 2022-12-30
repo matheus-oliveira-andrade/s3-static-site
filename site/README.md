@@ -2,12 +2,21 @@
 
 Created using [Next.js](https://nextjs.org/) framework
 
-## How to run locally
+### How to run
 
-```bash
-npm install
-```
+- Locally
+    ```bash
+    npm install && npm run dev
+    ```
 
-```bash
-npm run dev
-``` 
+- docker dev
+
+    ```bash
+    ./start-dev.sh
+    ```
+
+- How run using docker 
+
+    ```bash
+    ./start.sh
+    ```
