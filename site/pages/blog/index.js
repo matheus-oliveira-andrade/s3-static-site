@@ -101,7 +101,7 @@ export default function Blog() {
 
         <span> / </span>
 
-        <span className="breadcrumb-active"> Blog </span>
+        <span className="breadcrumb-active"> Blog - Dev env </span>
       </div>
 
       <h1
